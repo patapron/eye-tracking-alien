@@ -23,7 +23,7 @@ export class AppComponent implements OnInit {
   Initial(): void {
     this.SetWindowSize();
     // If the window change the size, funtion will be launched to set sizes again
-    window.addEventListener('resize', this.SetWindowSize);
+    // window.addEventListener('resize', this.SetWindowSize);
 
     // Add an event to mouse move
     document.addEventListener('mousemove', event => {
@@ -38,11 +38,14 @@ export class AppComponent implements OnInit {
       const percentLeft = Math.round(mouseLeft * 100 / this.windowWidth);
 
       // Get HTML dom element
-      const eye = <HTMLElement>document.querySelector('.eye');
+      const eyeL = <HTMLElement>document.querySelector('.eye-left');
+      const eyeR = <HTMLElement>document.querySelector('.eye-right');
       // Apply new vertical position
-      eye.style.top = -0.2 + 0.7 * percentTop / 100 + 'em';
+      eyeL.style.top = -0.224 + 0.7 * percentTop / 100 + 'em';
+      eyeR.style.top = -0.227 + 0.7 * percentTop / 100 + 'em';
       // Apply new horizontal position
-      eye.style.left = -0.2 + 0.7 * percentLeft / 100 + 'em';
+      eyeL.style.left = -0.224 + 0.7 * percentLeft / 100 + 'em';
+      eyeR.style.left = -0.227 + 0.7 * percentLeft / 100 + 'em';
     });
   }
 
